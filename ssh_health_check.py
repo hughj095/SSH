@@ -1,4 +1,4 @@
-### Remote laptop health check with SSH
+### Remote laptop health check with SSH and email alerts
 
 import paramiko
 import smtplib
