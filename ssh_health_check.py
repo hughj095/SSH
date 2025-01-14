@@ -66,3 +66,14 @@ def send_email(alerts):
             print("Email sent successfully")
     except Exception as e:
         print(f'Error sending email: {e}')
+
+def main():
+    client = connect_to_server(SERVER)
+    if client:
+        alerts = check_health(client)
+        if alerts:
+            send_email(alerts)
+        client.close()
+
+if __name__ == "__main__":
+    main()
