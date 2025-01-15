@@ -7,10 +7,10 @@ import config
 
 #variables
 SERVER = {
-    "hostname": "192.168.1.2",
+    "hostname": "20.84.75.9",
     "port" : 22,
-    "username" : "john.m.hughes84@outlook.com",
-    "password" : "6347"
+    "username" : "vmJohn08",
+    "password" : config.VM_PASSWORD
 }
 RECIPIENT = 'john.m.hughes84@outlook.com'
 
