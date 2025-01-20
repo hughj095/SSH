@@ -7,9 +7,9 @@ import config
 
 #variables
 SERVER = {
-    "hostname": "20.84.75.9",
+    "hostname": "172.191.171.163",
     "port" : 22,
-    "username" : "vmJohn08",
+    "username" : "hughj095",
     "password" : config.VM_PASSWORD
 }
 RECIPIENT = 'john.m.hughes84@outlook.com'
@@ -38,7 +38,7 @@ def check_health(client):
     cpu_command = "top -bn1 | grep Cpu"
     disk_command = "df -h /"
     cpu_usage = float(execute_command(client, cpu_command).split()[1])
-    disk_usage = int(execute_command(client, disk_command).split()[4][:-1])
+    disk_usage = float(execute_command(client, disk_command).split()[11][:-1])
     print(f'CPU Usage is {cpu_usage}%')
     print(f'Disk Usage is {disk_usage}%')
     alerts = []
