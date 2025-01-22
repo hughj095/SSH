@@ -1,6 +1,5 @@
 import csv
 import subprocess
-import os
 import config
 import paramiko
 
@@ -15,19 +14,14 @@ data = [
     ['Name', 'Age', 'City'],
     ['John', 30, 'New York'],
     ['Jane', 25, 'Los Angeles'],
-    ['Alice', 28, 'Chicago']
+    ['Alice', 28, 'test']
 ]
 # Writing data to CSV
 with open(LOCAL_FILE_PATH, mode='w', newline='') as file:
     writer = csv.writer(file)
     writer.writerows(data)
-
 print(f"CSV file saved locally as {LOCAL_FILE_PATH}")
 
-
-
-# Construct the SCP command
-#scp_command = f"sshpass -p '{config.VM_PASSWORD}' scp {local_file_path} {vm_username}@{vm_ip}:{remote_directory}"
 # Run the SCP command using subprocess
 try:
     ssh = paramiko.SSHClient()
