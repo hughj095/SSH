@@ -5,10 +5,10 @@ import config
 import paramiko
 
 #VARIABLES
-vm_username = 'hughj095'          
-vm_ip = '172.191.171.163'       
-remote_directory = 'data/'  
-local_file_path = 'data.csv'
+VM_USERNAME = 'hughj095'          
+VM_IP = '172.191.171.163'       
+REMOTE_DIRECTORY = 'data/'  
+LOCAL_FILE_PATH = 'data.csv'
 
 # Data you want to save as CSV
 data = [
@@ -18,11 +18,11 @@ data = [
     ['Alice', 28, 'Chicago']
 ]
 # Writing data to CSV
-with open(local_file_path, mode='w', newline='') as file:
+with open(LOCAL_FILE_PATH, mode='w', newline='') as file:
     writer = csv.writer(file)
     writer.writerows(data)
 
-print(f"CSV file saved locally as {local_file_path}")
+print(f"CSV file saved locally as {LOCAL_FILE_PATH}")
 
 
 
@@ -32,10 +32,10 @@ print(f"CSV file saved locally as {local_file_path}")
 try:
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())  # Automatically accept unknown keys
-    ssh.connect(vm_ip, port=config.PORT, username=vm_username, password=config.VM_PASSWORD)
+    ssh.connect(VM_IP, port=config.PORT, username=VM_USERNAME, password=config.VM_PASSWORD)
     sftp = ssh.open_sftp()
-    sftp.put(local_file_path, remote_directory+local_file_path)
+    sftp.put(LOCAL_FILE_PATH, REMOTE_DIRECTORY+LOCAL_FILE_PATH)
     sftp.close()
-    print(f"File successfully uploaded to {vm_username}@{vm_ip}:{remote_directory}")
+    print(f"File successfully uploaded to {VM_USERNAME}@{VM_IP}:{REMOTE_DIRECTORY}")
 except subprocess.CalledProcessError as e:
     print(f"Error occurred during file transfer: {e}")
