@@ -3,7 +3,7 @@ import config
 
 # Variables
 HOSTNAME = '172.191.171.163'
-PORT = 22
+PORT = config.PORT
 USERNAME = "hughj095"
 PASSWORD = config.VM_PASSWORD
 LOCAL_FILE_PATH = r"C:\Users\johnm\OneDrive\Desktop\SSH\run_on_vm.py"
