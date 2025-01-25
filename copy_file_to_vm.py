@@ -2,13 +2,14 @@ import paramiko
 import config
 
 # Variables
-HOSTNAME = '172.191.171.163'
+HOSTNAME = '20.51.230.81'
 PORT = config.PORT
 USERNAME = "hughj095"
 PASSWORD = config.VM_PASSWORD
-LOCAL_FILE_PATH = r"C:\Users\johnm\OneDrive\Desktop\SSH\run_on_vm.py"
-REMOTE_FILE_PATH = "scripts/run_on_vm.py"
+LOCAL_FILE_PATH = r"C:\Users\johnm\OneDrive\Desktop\Portfolio\nginx.conf"
+REMOTE_FILE_PATH = "Portfolio/nginx.conf"
 
+#Functions
 try:
     # Create an SSH client
     ssh = paramiko.SSHClient()
