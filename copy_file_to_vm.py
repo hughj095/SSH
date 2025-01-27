@@ -6,8 +6,8 @@ HOSTNAME = '20.51.230.81'
 PORT = config.PORT
 USERNAME = "hughj095"
 PASSWORD = config.VM_PASSWORD
-LOCAL_FILE_PATH = r"C:\Users\johnm\OneDrive\Desktop\Portfolio\nginx.conf"
-REMOTE_FILE_PATH = "Portfolio/nginx.conf"
+LOCAL_FILE_PATH = r"C:\Users\johnm\OneDrive\Desktop\Portfolio\style.css"
+REMOTE_FILE_PATH = "Portfolio/style.css"
 
 #Functions
 try:
