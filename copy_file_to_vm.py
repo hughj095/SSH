@@ -7,7 +7,7 @@ PORT = config.PORT
 USERNAME = "hughj095"
 PASSWORD = config.VM_PASSWORD
 LOCAL_FILE_PATH = r"C:\Users\johnm\OneDrive\Desktop\Portfolio\style.css"
-REMOTE_FILE_PATH = "Portfolio/style.css"
+REMOTE_FILE_PATH = "/var/www/myWebsite/style.css"
 
 #Functions
 try:
