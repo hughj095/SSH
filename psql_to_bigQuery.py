@@ -32,7 +32,8 @@ def upload_to_gcs(df, table_name):
     csv_filename = f"{table_name}.csv"
     df.to_csv(csv_filename, index=False)
     
-    client = storage.Client()
+    client = storage.Client(project="bq-project1-451012")
+    print(GCS_BUCKET_NAME)
     bucket = client.bucket(GCS_BUCKET_NAME)
     blob = bucket.blob(f"{table_name}.csv")
     blob.upload_from_filename(csv_filename)
@@ -56,7 +57,7 @@ def load_into_bigquery(table_name):
     
     print(f"Loaded data into BigQuery table {table_id}")
 
-def main():
+def main(table_name):
     tables = [table_name]
     for table in tables:
         df = extract_postgres_table(table)
@@ -66,4 +67,4 @@ def main():
     print("PostgreSQL data successfully copied to BigQuery!")
 
 if __name__ == "__main__":
-    main()
+    main(table_name)
